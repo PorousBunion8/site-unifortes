@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Roboto Mono', 'sans-serif';
+}
+
+body {
+    background-color: #084F8C;
+}
+
+figure{
+    width: 50px;
+    margin-left: 50px;
+}
+
+#cabecalho {
+    background-color: white;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#fortes {
+    height: 40px;
+}
+
+.icones_esquerda {
+    height: 30px;
+    width: 30px;
+    margin: 15px;
+    justify-content: space-between;
+    display: inline-flex;
+    align-items: center;
+}
+
+header h1 {
+    flex-grow: 1;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.icones_direita {
+    height: 30px;
+    width: 30px;
+    margin: 15px;
+    justify-content: space-between;
+    display: inline-flex;
+    align-items: center; 
+}
+
+#rodape {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    height: 10px;
+}
+
+.ir {
+    display: flex;
+    align-items: center;
+}
+
+.icones_rodape {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.ir p {
+    margin-right: 40px;
+    font-size: 16px;
+}
+
+.icones_topo {
+    height: 40px;
+    width: 40px;
+    margin: 15px;
+    justify-content: space-between;
+    display: inline-flex;
+    align-items: center; 
+}
+
+.container_topo img:first-child {
+    float: left;
+}
+  
+.container_topo img:last-child {
+    float: right;
+}
+
+.container_topo {
+    margin-bottom: 70px;
+}
+
+
+
+.cinzapb {
+    background-color: #D9D9D9;
+    padding: 20px;
+    height: 50vh;
+}
+
+.azulpb {
+    background-color:#084F8C;
+    padding: 20px;
+    height: 50vh;
+    color: #fff;
+}
+
+.azulpb p {
+    
+    margin-left: 320px;
+}
+
+
+
+
+
+
+
+.pb8 {
+    margin: 10px 20px;
+    margin-left: 679px;
+}
+
+#pb {
+    font-weight: 80px;
+    font-weight: bold;
+
+}
+
+
+
+.c1 {
+    margin-left: 90px;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.btpb {
+    margin-bottom: 70px;
+    margin-left: 90px;
+}
+
+.cinzapb {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.c1 {
+    flex: 1 0 50%;
+    /* Outras propriedades de estilo para .c1 */
+}
+
+.paragraphs {
+    flex: 1 0 50%;
+    /* Outras propriedades de estilo para .paragraphs */
+}
+
+.butpb {
+    display: inline-block;
+  padding: 10px 20px;
+  background-color: #084F8C;
+  color: white;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 25px;
+}
+
+
