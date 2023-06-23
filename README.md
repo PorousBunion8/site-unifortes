@@ -39,6 +39,4 @@ Este projeto contém vários arquivos relacionados ao sistema "Unifortes". Abaix
 5. unifortes22.architect:
    Este arquivo é um arquivo de projeto específico da ferramenta Power Architect relacionado ao sistema "Unifortes". Ele provavelmente contém informações sobre o projeto, diagramas, configurações e outros elementos relevantes para o desenvolvimento do sistema. O formato específico pode variar dependendo da versão do Power Architect utilizado.
 
-6. unifortes22.architect~:
-   Este arquivo é uma versão de backup ou uma versão anterior do arquivo "unifortes22.architect". O sufixo "~" geralmente indica que é uma cópia de segurança ou uma versão temporária do arquivo principal. Esse arquivo pode ter sido criado automaticamente pela ferramenta Power Architect ou pelo sistema operacional durante o processo de salvamento.
 
