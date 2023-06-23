@@ -6,7 +6,7 @@ CREATE TABLE public.Loja (
                 Recompensas VARCHAR(255) NOT NULL,
                 CONSTRAINT id_recompensa PRIMARY KEY (Recompensa_id)
 );
-COMMENT ON TABLE public.Loja IS 'Tabela referente �s recompensas obtidas';
+COMMENT ON TABLE public.Loja IS 'Tabela referente ás recompensas obtidas';
 COMMENT ON COLUMN public.Loja.Recompensa_id IS 'Identificador unico das recompensas';
 COMMENT ON COLUMN public.Loja.Quantidade IS 'Quantidade de recompensas de cada produto';
 COMMENT ON COLUMN public.Loja.Valor IS 'Valor da recompensa';
@@ -25,16 +25,16 @@ CREATE TABLE public.Funcionrios (
                 Certificados VARCHAR(255),
                 CONSTRAINT cpf PRIMARY KEY (cpf)
 );
-COMMENT ON TABLE public.Funcionrios IS 'Tabela que representa os funcion�rios usu�rios do site';
+COMMENT ON TABLE public.Funcionrios IS 'Tabela que representa os funcionários usuários do site';
 COMMENT ON COLUMN public.Funcionrios.cpf IS 'CPF do funcionario';
-COMMENT ON COLUMN public.Funcionrios.Nome IS 'Nome do funcion�rio';
-COMMENT ON COLUMN public.Funcionrios.Cargo IS 'Coluna referente ao cargo do funcion�rio';
-COMMENT ON COLUMN public.Funcionrios.Nascimento IS 'Data de nascimento do funcion�rio';
-COMMENT ON COLUMN public.Funcionrios.Email IS 'Email do funcion�rio';
-COMMENT ON COLUMN public.Funcionrios.Estado IS 'Estado do Funcion�rio';
-COMMENT ON COLUMN public.Funcionrios.Pontos IS 'Pontos obtidos pelo funcion�rio ao completar cursos';
-COMMENT ON COLUMN public.Funcionrios.Sexo IS 'Sexo do funcion�rio';
-COMMENT ON COLUMN public.Funcionrios.Certificados IS 'Certificado obtido pelo funcion�rio ao completar um curso';
+COMMENT ON COLUMN public.Funcionrios.Nome IS 'Nome do funcionário';
+COMMENT ON COLUMN public.Funcionrios.Cargo IS 'Coluna referente ao cargo do funcionário';
+COMMENT ON COLUMN public.Funcionrios.Nascimento IS 'Data de nascimento do funcionário';
+COMMENT ON COLUMN public.Funcionrios.Email IS 'Email do funcionário';
+COMMENT ON COLUMN public.Funcionrios.Estado IS 'Estado do Funcionário';
+COMMENT ON COLUMN public.Funcionrios.Pontos IS 'Pontos obtidos pelo funcionário ao completar cursos';
+COMMENT ON COLUMN public.Funcionrios.Sexo IS 'Sexo do funcionário';
+COMMENT ON COLUMN public.Funcionrios.Certificados IS 'Certificado obtido pelo funcionário ao completar um curso';
 
 
 CREATE TABLE public.Curso (
@@ -73,7 +73,7 @@ CREATE TABLE public.Pontos_de_resgate (
 );
 COMMENT ON TABLE public.Pontos_de_resgate IS 'tabela referente aos pontos de resgate para loja';
 COMMENT ON COLUMN public.Pontos_de_resgate.Loja_Recompensa_id IS 'Identificador unico das recompensas';
-COMMENT ON COLUMN public.Pontos_de_resgate.cpf IS 'CPF do funcion�rio';
+COMMENT ON COLUMN public.Pontos_de_resgate.cpf IS 'CPF do funcionário';
 COMMENT ON COLUMN public.Pontos_de_resgate.Pontos IS 'Pontos para resgate das recompensas';
 
 
@@ -104,3 +104,25 @@ REFERENCES public.Curso (Curso_id)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
+
+ALTER TABLE public.Loja
+ADD CONSTRAINT quantidade_non_negative CHECK (Quantidade >= 0),
+ADD CONSTRAINT valor_non_negative CHECK (Valor >= 0);
+
+ALTER TABLE public.Funcionários
+ADD CONSTRAINT email_format_check CHECK (Email ~* '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$');
+
+ALTER TABLE public.Funcionários
+ADD CONSTRAINT pontos_non_negative CHECK (Pontos >= 0);
+
+ALTER TABLE public.Funcionários
+ADD CONSTRAINT sexo_allowed_values CHECK (Sexo IN ('F', 'M'));
+
+ALTER TABLE public.Curso
+ADD CONSTRAINT duracao_format_check CHECK (Duracao ~ '^\d+ horas$');
+
+ALTER TABLE public.Jogos
+ADD CONSTRAINT premio_non_negative CHECK (Premio >= 0);
+
+ALTER TABLE public.Pontos_de_resgate
+ADD CONSTRAINT pontos_non_negative CHECK (Pontos >= 0);
